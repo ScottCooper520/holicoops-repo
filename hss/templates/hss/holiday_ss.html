@@ -13,14 +13,21 @@
         The code below is partially working (can display an image), but was thinking that
         it will be easier to just create an array of urls and cycle through them, which is
         a better/more efficient approach than using a Django template below...-->
+        
+        <!-- OK 
         {% for slide in slides %}
         {{ slide.image.url }}
+        -->
+
         <!--OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
         <!-- Following works, but needed to add Scott image just under static. -->
         <!-- OK <p><img src="{% static "Scott.jpg" %}"/></p> -->
         <!-- Following syntax is working. -->
+
+        <!-- OK
         <p><img src="/static/hss/images/{{slide.image.url}}"/></p>
         {% endfor %}
+        -->
 
     <!-- OK This is just a hard-coded test -->
     <!-- <div> -->
@@ -50,9 +57,28 @@
         <!-- <div>
             <button class="submit" onclick="slideFunction()">Run Ajax GET call</button>
         </div> -->
+        <div>
+            Showing contents of first div...
+        </div>
         <div id="imageDiv" class="row">
+                {% for slide in slides %}
+                {{ slide.image.url }}
+                <!--OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
+                <!-- Following works, but needed to add Scott image just under static. -->
+                <!-- OK <p><img src="{% static "Scott.jpg" %}"/></p> -->
+                <!-- Following syntax is working. -->
+                <p><img src="/static/hss/images/{{slide.image.url}}"/></p>
+                {% endfor %}
         </div>
         <div id="captionDiv" class="row">
+                {% for slide in slides %}
+                {{ slide.title }}
+        </br>
+                <!--OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
+                <!-- Following works, but needed to add Scott image just under static. -->
+                <!-- OK <p><img src="{% static "Scott.jpg" %}"/></p> -->
+                <!-- Following syntax is working. -->
+                {% endfor %}
         </div>
     </div>
 </body>
