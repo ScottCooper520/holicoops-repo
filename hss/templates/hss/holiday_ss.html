@@ -1,6 +1,68 @@
+{% load static %}
 <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="static/hss/js/mainJs.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/hss/css/styles.css">
+    </head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
+    <!-- 12/11/2018: I have decided to use JS to handle the slideshow. It will 
+        allow for quicker development and better control over the end product.
+        The code below is partially working (can display an image), but was thinking that
+        it will be easier to just create an array of urls and cycle through them, which is
+        a better/more efficient approach than using a Django template below...-->
+        {% for slide in slides %}
+        {{ slide.image.url }}
+        <!--OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
+        <!-- Following works, but needed to add Scott image just under static. -->
+        <!-- OK <p><img src="{% static "Scott.jpg" %}"/></p> -->
+        <!-- Following syntax is working. -->
+        <p><img src="/static/hss/images/{{slide.image.url}}"/></p>
+        {% endfor %}
+
+    <!-- OK This is just a hard-coded test -->
+    <!-- <div> -->
+        <!-- Following works -->
+        <!-- {% load static %}
+        <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
+    <!-- </div> -->
+
+    <!-- Some other experimentation. Was not able to get image as variable to work. -->
+    <!-- {% for slide in slides %}
+    <div> -->
+        <!-- {{ STATIC_URL }} -->
+        <!-- {{ slide.image.url }} -->
+        <!-- <p><img src="{{ slide.image.url }}" width="300px"></p> -->
+        <!-- {% load static %} -->
+        <!-- OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
+        <!-- {{ slide.image }} -->
+        <!-- <p>title: {{ slide.title }}</p> -->
+        <!-- <h1><a href="">{{ post.title }}</a></h1> -->
+        <!-- <p>{{ post.text|linebreaksbr }}</p>
+        <p>But where are the images?</p> -->
+    <!-- </div>
+    {% endfor %} -->
+    
+    <div class="container-fluid">
+        <!-- Following is for testing JS execution. -->
+        <!-- <div>
+            <button class="submit" onclick="slideFunction()">Run Ajax GET call</button>
+        </div> -->
+        <div id="imageDiv" class="row">
+        </div>
+        <div id="captionDiv" class="row">
+        </div>
+    </div>
 </body>
+<script>
+    // All working in general, but JS Ajax call not returning...
+    //ok showAlert(); // In mainJs.js
+    // showImage();
+    // showSlides();
+    // function slideFunction() {
+    //     showSlides();
+    // }
+</script>
 </html>
