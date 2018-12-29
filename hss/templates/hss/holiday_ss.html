@@ -61,6 +61,7 @@
             Showing contents of first div...
         </div>
         <div id="imageDiv" class="row">
+            imageDiv div
                 {% for slide in slides %}
                 {{ slide.image.url }}
                 <!--OK <p><img src="{% static "hss/images/CoopsApp2.PNG" %}" alt="My image"></p> -->
@@ -71,6 +72,7 @@
                 {% endfor %}
         </div>
         <div id="captionDiv" class="row">
+            captionDiv div
                 {% for slide in slides %}
                 {{ slide.title }}
         </br>
