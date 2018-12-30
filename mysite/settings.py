@@ -75,22 +75,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 # OK for local
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CoopCraft$default',
-        'USER': 'CoopCraft',
-        'PASSWORD': 'python_rsc_db',
-        'HOST': 'CoopCraft.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# To access pa mysql from Django. Not working...
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'CoopCraft$default',
+#         'USER': 'CoopCraft',
+#         'PASSWORD': 'python_rsc_db',
+#         'HOST': 'CoopCraft.mysql.pythonanywhere-services.com',
+#     }
+# }
 
 
 # Password validation
