@@ -82,6 +82,8 @@ DATABASES = {
     }
 }
 
+# I think it is best to use local above so I will be able to backup DB simply
+# by coping the sqlite3 file. Then just run migrations whenever I need to update PA.
 # To access pa mysql from Django. Not working...
 # DATABASES = {
 #     'default': {
