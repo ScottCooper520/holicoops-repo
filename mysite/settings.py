@@ -82,7 +82,6 @@ DATABASES = {
     }
 }
 
-
 # To access pa mysql from Django. Not working...
 # DATABASES = {
 #     'default': {
