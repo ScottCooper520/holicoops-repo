@@ -75,25 +75,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 # OK for local
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # I think it is best to use local above so I will be able to backup DB simply
 # by coping the sqlite3 file. Then just run migrations whenever I need to update PA.
 # To access pa mysql from Django. Not working...
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'CoopCraft$default',
-#         'USER': 'CoopCraft',
-#         'PASSWORD': 'python_rsc_db',
-#         'HOST': 'CoopCraft.mysql.pythonanywhere-services.com',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CoopCraft$default',
+        'USER': 'CoopCraft',
+        'PASSWORD': 'python_rsc_db',
+        'HOST': 'CoopCraft.mysql.pythonanywhere-services.com',
+    }
+}
 
 
 # Password validation
